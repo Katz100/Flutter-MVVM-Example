@@ -16,10 +16,25 @@ class MyHomePage extends StatelessWidget {
           return MyList(entries: viewModel.entries);
         })
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => viewModel.addItemToList(),
-        tooltip: 'Increment Counter',
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () => viewModel.removeItem(),
+            tooltip: "Remove item",
+            heroTag: "1",
+            child: const Icon(Icons.delete),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          FloatingActionButton(
+            onPressed: () => viewModel.addItemToList(),
+            tooltip: 'Increment Counter',
+            heroTag: "2",
+            child: const Icon(Icons.add),
+          )
+        ],
       ),
     );
   }

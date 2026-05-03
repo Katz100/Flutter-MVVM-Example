@@ -23,4 +23,11 @@ class HomeViewmodel extends ChangeNotifier {
     _entries.add(rng.nextInt(99) + 1);
     notifyListeners();
   }
+
+  void removeItem() {
+    if (_entries.isNotEmpty) {
+      _entries.removeLast();
+      notifyListeners();
+    }
+  }
 }
