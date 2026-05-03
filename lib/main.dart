@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/home_viewmodel.dart';
+import 'package:test_app/home/home_viewmodel.dart';
 
-import 'home_screen.dart';
+import 'home/home_screen.dart';
 import 'routes.dart';
 
 void main() {
