@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/widget/MyList.dart';
 import 'home_viewmodel.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -12,11 +13,11 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(title: Text(viewModel.title),),
       body: Center(
         child: ListenableBuilder(listenable: viewModel, builder: (context, _) {
-          return Text("You have pressed the button ${viewModel.counter} times");
+          return MyList(entries: viewModel.entries);
         })
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => viewModel.updateCounter(),
+        onPressed: () => viewModel.addItemToList(),
         tooltip: 'Increment Counter',
         child: const Icon(Icons.add),
       ),
